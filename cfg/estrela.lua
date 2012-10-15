@@ -1,8 +1,8 @@
 local G = ... -- point to the global environment in the script
--- update app configuration to load default icons, all tools and specs
-G.ide.app.loadfilters.tools = function(file) return true end -- load all tools
-G.ide.app.loadfilters.specs = function(file) return true end -- load all specs
-G.ide.app.createbitmap = nil -- load default icons
+-- update app configuration to load all tools, specs, and interpreters
+G.ide.app.loadfilters.tools = function() return true end
+G.ide.app.loadfilters.specs = function() return true end
+G.ide.app.loadfilters.interpreters = function() return true end
 
 local luxpath = os.getenv("LUXINIA")
 path.luxinia = luxpath and luxpath.."/" or "../luxinia/engine/"

@@ -18,7 +18,7 @@ local app = {
   loadfilters = {
     tools = function(file) return false end,
     specs = function(file) return file:find('^spec[/\\]lua%.lua$') end,
-    interpreters = function(file) return true end,
+    interpreters = function(file) return not file:find('estrela') end,
   },
 
   preinit = function ()
