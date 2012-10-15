@@ -1,9 +1,15 @@
+local G = ... -- point to the global environment in the script
+-- update app configuration to load default icons, all tools and specs
+G.ide.app.loadfilters.tools = function(file) return true end -- load all tools
+G.ide.app.loadfilters.specs = function(file) return true end -- load all specs
+G.ide.app.createbitmap = nil -- load default icons
+
 local luxpath = os.getenv("LUXINIA")
 path.luxinia = luxpath and luxpath.."/" or "../luxinia/engine/"
 local luxpath2 = os.getenv("LUXINIA2")
 path.luxinia2 = luxpath2 and luxpath2.."/" or "../luxinia2/runtime/bin_Windows_x86/"
 
-interpreter = "estrelashell"
+interpreter = "luadeb"
 
 editor.fontname = "Courier New"
 editor.caretline = true
